@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.contact_container {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    align-items: center;
+    min-height: 100vh;
+    width: auto;
+    margin-bottom: 0;
+}
+
+.contact_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact_header > h4 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.contact_header > p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.adjust_space {
+    display: block;
+    justify-self: center;
+    width: 80%;
+}
+
+.contact_detail {
+    display: flex;
+    align-items: start;
+    /* margin-top: 50px; */
+    justify-content: space-around;
+    width: auto;
+}
+
+.sub {
+    font-size: large;
+    font-weight: 500;
+    color: rgb(48, 47, 47);
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    margin: auto;
+}
+
+.mail,.phone,.linkedin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+}
+
+.mail h5 ,.phone h5 ,.linkedin h5 {
+    font-weight: 600;
+}
+
+.media_url {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+    gap: 2px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+}
+  
+.arrow {
+    visibility: hidden;
+    opacity: 0;
+    margin-left: 8px;
+    transform: rotate(0deg);
+    color: #333;
+  }
+  
+  .media_url:hover .arrow {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(4px);
+    color: #333;
+    animation: arrow_rotation 0.5s ease-in-out;
+  }
+  
+
+.media_url:hover {
+    background-color: rgba(197, 191, 191, 0.4);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10%;
+    padding: 6px 12px;
+}
+
+@keyframes arrow_rotation {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(1);
+    }
+    
+}
+
+.write_me {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.text_field{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 10px;
+    margin: auto;
+}
+
+.send_btn {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 5px;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(32, 32, 32);
+    color: aliceblue;
+}
+
+.send_btn:hover{
+    cursor: pointer;
+    box-shadow: 2px 6px 8px rgb(51, 50, 50);
+    transition: all 0.3s ease-in-out;
+}
+
+.send_btn:active {
+    background-color: rgb(77, 76, 76);
+    transition: all 0.1s ease-in-out;
+}
+
+.send_btn.loading {
+    cursor: not-allowed;
+    background-color: rgb(77, 76, 76);
+}
+
+.loader_container {
+    display: flex;
+    gap: .25rem;
+}
+
+.loader {
+    border-radius: 50%;
+    background-color: #fff;
+    width: .8rem;
+    height: .8rem;
+    animation: scaleUp 1.2s infinite ease-in-out;
+}
+
+.loader_container div:nth-child(1){
+    background-color: #FF605C;
+}
+
+.loader_container div:nth-child(2){
+    background-color: #00CA4E;
+    animation-delay: 0.2s !important;
+}
+
+.loader_container div:nth-child(3){
+    background-color: #FFBD44;
+    animation-delay: 0.4s!important;
+}
+
+@keyframes scaleUp {
+    0%, 80%, 100%{
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    40% {
+        transform: translateY(6px);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 825px) {
+    
+    .contact_container {
+        padding: 20px 0 20px 0;
+    }
+
+    .contact_detail {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .talk_to_me {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .cards {
+        justify-self: center;
+        width: 100%;
+        max-width: 450px;
+        margin: 10px 0 0 0;
+    }
+
+    .direct_mail {
+        width: 100%;
+    }
+    
+    .text_field {
+        display: flex !important;
+        justify-self: center !important;
+        width: 100% !important;
+        max-width: 450px !important;
+        margin: 10px 0 0 0 !important;
+    }
+
+    .css-13r4j3i .MuiTextField-root{
+        width: 100% !important;
+        max-width: 435px !important;
+    }
+}

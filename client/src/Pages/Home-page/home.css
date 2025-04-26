@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 100px;
+    color: rgb(48, 47, 47);
+    margin-bottom: 150px;
+}
+
+.social_media_icones {
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+    gap: 25px;
+    margin-top: 40px;
+    will-change: transform, opacity;
+}
+
+.social_media_icones > a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.social_media_icones > a:hover {
+    color: #ff605c;
+}
+
+.intro {    
+    width: 500px;
+    line-height: 30px;
+    will-change: transform, opacity;
+}
+
+.intro_pic {
+    padding-left: 20px;
+    will-change: transform, opacity;
+}
+
+.heading {
+    display: inline-flex;
+    position: relative;
+    font-style: normal;
+    font-weight: 600;
+    font-size: xx-large;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.heading::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid;
+    background-color: #ffffff;
+    left: 0;
+    animation: 
+        typing 6s infinite ease-in-out,
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes typing {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 100%;
+    }
+}
+
+@keyframes cursor {
+    0% , 50% , 100% {
+        border-color: black;
+    }
+}
+
+.subheading {
+    font-size: large;
+    font-weight: 500;  
+}
+
+.hello_btn {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(32, 32, 32);
+    color: aliceblue;
+}
+
+.hello_btn:hover{
+    cursor: pointer;
+    box-shadow: 2px 6px 8px rgb(51, 50, 50);
+    transition: all 0.3s ease-in-out;
+}
+
+.hello_btn:active {
+    background-color: rgb(77, 76, 76);
+    transition: all 0.1s ease-in-out;
+}
+
+.pera {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+
+.scroll {
+    display: flex;
+    width: 100px;
+    margin-top: 200px; 
+    align-items: end;
+    font-weight: 300;
+}
+
+.image {
+    display:flex ;
+    justify-content: start;
+    align-items: start;
+    width: 300px;
+    height: 350px;
+    border-radius: 50%;
+    /* animation: image__animate 8s ease-in-out infinite 1s; */
+}
+
+@keyframes image__animate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+
+    50% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+    }
+}
+
+
+@media only screen and (max-width: 825px) {
+
+    #home {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 90vh;
+        margin: 30px 0 200px 0;
+        padding: 0;
+    }
+
+    .social_media_icones {
+        position: absolute;
+        top: 15vh;
+        left: 0;
+        width: 20vw;
+        margin-left: 20px;
+        width: 10%;
+        order: -1;
+    }
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        text-align: center;
+        width: auto;
+        gap: 0;
+    }
+
+    .intro_pic {
+        /* position: absolute; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        gap: 10px;
+        order: -1;
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+    .pera {
+        margin: 10px;
+    }
+
+}
