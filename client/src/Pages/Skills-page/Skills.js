@@ -1,54 +1,69 @@
-import React, { useEffect, useRef } from "react";
+/* eslint-disable */
+import React, { useEffect, useRef } from 'react';
 // import Topbar from "../../Components/Topbar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import "./skill.css";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import './skill.css';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function Skills() {
-
   const skillRef = useRef();
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: skillRef.current,
-        start: "top 80%",
-        end: "bottom 80%",
-        // markers: true,
-        scrub: 1,
-        toggleActions: "play none none reverse",
-      },
-    });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: skillRef.current,
+          start: 'top 80%',
+          end: 'bottom 80%',
+          // markers: true,
+          scrub: 1,
+          toggleActions: 'play none none reverse',
+        },
+      });
 
-    tl.from(".skill_heading", {
-      y: -50,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
-    })
-      .from(".skill_block", {
+      tl.from('.skill_heading', {
+        y: -50,
         opacity: 0,
-        y: 40,
-        duration: 0.6,
-        stagger: 0.3,
-        ease: "power2.out",
-      }, "-=0.6")
-      .from(".block_heading", {
-        opacity: 0,
-        x: -20,
-        duration: 0.5,
-        stagger: 0.2,
-      }, "-=0.4")
-      .from(".column_list div", {
-        opacity: 0,
-        y: 30,
-        duration: 0.4,
-        stagger: 0.1,
-        ease: "elastic.out(0.2)",
-      }, "-=0.4");
-  }, { scope: skillRef });
+        duration: 0.8,
+        ease: 'power3.out',
+      })
+        .from(
+          '.skill_block',
+          {
+            opacity: 0,
+            y: 40,
+            duration: 0.6,
+            stagger: 0.3,
+            ease: 'power2.out',
+          },
+          '-=0.6'
+        )
+        .from(
+          '.block_heading',
+          {
+            opacity: 0,
+            x: -20,
+            duration: 0.5,
+            stagger: 0.2,
+          },
+          '-=0.4'
+        )
+        .from(
+          '.column_list div',
+          {
+            opacity: 0,
+            y: 30,
+            duration: 0.4,
+            stagger: 0.1,
+            ease: 'elastic.out(0.2)',
+          },
+          '-=0.4'
+        );
+    },
+    { scope: skillRef }
+  );
 
   return (
     <>

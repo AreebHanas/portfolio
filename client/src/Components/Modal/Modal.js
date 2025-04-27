@@ -1,19 +1,20 @@
-import React, { useEffect, useRef, useState } from "react";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Typography from "@mui/material/Typography";
-import { FormLabel } from "@mui/material";
-import gsap from "gsap";
+/* eslint-disable */
+import React, { useEffect, useRef, useState } from 'react';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Typography from '@mui/material/Typography';
+import { FormLabel } from '@mui/material';
+import gsap from 'gsap';
 
 const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
   width: 400,
-  bgcolor: "background.paper",
-  border: "none",
-  borderRadius: "8px",
+  bgcolor: 'background.paper',
+  border: 'none',
+  borderRadius: '8px',
   boxShadow: 24,
   p: 4,
   scale: 0.8,
@@ -31,7 +32,7 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
         opacity: 1,
         scale: 1,
         duration: 0.5,
-        ease: "power3.out",
+        ease: 'power3.out',
       });
     }
   }, [toggleModal]);
@@ -46,14 +47,16 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
   };
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      (prevIndex + 1) % projectDetails.snaps.length
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % projectDetails.snaps.length
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) =>
-      (prevIndex - 1 + projectDetails.snaps.length) % projectDetails.snaps.length
+    setCurrentImageIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + projectDetails.snaps.length) %
+        projectDetails.snaps.length
     );
   };
 
@@ -73,7 +76,7 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
           component="h2"
           sx={{ mb: 4 }}
         >
-          {projectDetails.title || "Project Title"}
+          {projectDetails.title || 'Project Title'}
         </Typography>
         <FormLabel>Project details</FormLabel>
         <Typography
@@ -81,21 +84,21 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
           sx={{ mt: 2, mb: 4 }}
           component="h2"
         >
-          {projectDetails.about || "Project description goes here."}
+          {projectDetails.about || 'Project description goes here.'}
         </Typography>
         <FormLabel>Features</FormLabel>
         <Typography sx={{ mt: 2, mb: 4 }} component="h2">
-          Features: {projectDetails.features || "No features listed."}
+          Features: {projectDetails.features || 'No features listed.'}
         </Typography>
         {projectDetails.snaps && projectDetails.snaps.length > 0 ? (
           <>
             <FormLabel>Project Screenshots</FormLabel>
             <Box
               sx={{
-                display: "flex",
-                flexDirection: "row",
-                overflowX: "auto",
-                gap: "10px",
+                display: 'flex',
+                flexDirection: 'row',
+                overflowX: 'auto',
+                gap: '10px',
                 mt: 2,
                 pb: 2,
               }}
@@ -106,13 +109,13 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
                   src={snap}
                   alt={`Screenshot ${index + 1}`}
                   style={{
-                    width: "300px",
-                    height: "200px",
-                    objectFit: "cover",
-                    borderRadius: "8px",
-                    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                    transition: "transform 0.2s",
-                    cursor: "pointer",
+                    width: '300px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                    transition: 'transform 0.2s',
+                    cursor: 'pointer',
                   }}
                   onClick={() => openImageViewer(index)}
                 />
@@ -124,7 +127,7 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
           <>
             <FormLabel>Demo</FormLabel>
             <Typography sx={{ mt: 2 }}>
-              URL:{" "}
+              URL:{' '}
               <a
                 href={projectDetails.url}
                 target="_blank"
@@ -140,29 +143,29 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
         {isImageViewerOpen && (
           <Box
             sx={{
-              position: "fixed",
+              position: 'fixed',
               top: 0,
               left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0, 0, 0, 0.8)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.8)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
               zIndex: 1300,
             }}
           >
             <button
               style={{
-                position: "absolute",
-                top: "10px",
-                right: "20px",
-                background: "none",
-                border: "none",
-                color: "white",
-                fontSize: "2rem",
-                cursor: "pointer",
+                position: 'absolute',
+                top: '10px',
+                right: '20px',
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                fontSize: '2rem',
+                cursor: 'pointer',
               }}
               onClick={closeImageViewer}
             >
@@ -172,31 +175,31 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
               src={projectDetails.snaps[currentImageIndex]}
               alt={`Screenshot ${currentImageIndex + 1}`}
               style={{
-                maxWidth: "90%", // Increased width to 90% of the viewport
-                maxHeight: "80%", // Adjusted height to leave space for buttons
-                borderRadius: "8px",
-                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-                marginBottom: "20px", // Add space between the image and buttons
+                maxWidth: '90%', // Increased width to 90% of the viewport
+                maxHeight: '80%', // Adjusted height to leave space for buttons
+                borderRadius: '8px',
+                boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                marginBottom: '20px', // Add space between the image and buttons
               }}
             />
             <Box
               sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "20px",
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '20px',
               }}
             >
               <button
                 style={{
-                  background: "none",
-                  border: "none",
-                  color: "white",
-                  fontSize: "1.5rem",
-                  cursor: "pointer",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  backgroundColor: "rgba(255, 255, 255, 0.2)",
+                  background: 'none',
+                  border: 'none',
+                  color: 'white',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  padding: '10px 20px',
+                  borderRadius: '5px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
                 }}
                 onClick={prevImage}
               >
@@ -204,14 +207,14 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
               </button>
               <button
                 style={{
-                  background: "none",
-                  border: "none",
-                  color: "white",
-                  fontSize: "1.5rem",
-                  cursor: "pointer",
-                  padding: "10px 20px",
-                  borderRadius: "5px",
-                  backgroundColor: "rgba(255, 255, 255, 0.2)",
+                  background: 'none',
+                  border: 'none',
+                  color: 'white',
+                  fontSize: '1.5rem',
+                  cursor: 'pointer',
+                  padding: '10px 20px',
+                  borderRadius: '5px',
+                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
                 }}
                 onClick={nextImage}
               >

@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { setActiveNav } from "../../redux/slices/navSlice.js";
-import "./toolBar.css";
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setActiveNav } from '../../redux/slices/navSlice.js';
+import './toolBar.css';
 
 function Topbar() {
   const [isMobile, setIsMobile] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [activatedNev, setActivatedNev] = useState(window.location.hash || "#home");
+  const [activatedNev, setActivatedNev] = useState(
+    window.location.hash || '#home'
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -18,14 +20,14 @@ function Topbar() {
       setActivatedNev(window.location.hash);
     };
 
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("scroll", handleHash);
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleHash);
 
     handleResize();
     handleHash();
     return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("scroll", handleHash);
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleHash);
     };
   }, []);
 
@@ -39,58 +41,61 @@ function Topbar() {
 
   const renderLinks = () => (
     <>
-    {
-      !isMobile &&
-      <h4 className="name" style={{color:'#393737'}}>AREEB HANAS</h4>
-    }
-      <div className={`routes ${isOpen ? "open" : ""}`}>
+      {!isMobile && (
+        <h4 className="name" style={{ color: '#393737' }}>
+          AREEB HANAS
+        </h4>
+      )}
+      <div className={`routes ${isOpen ? 'open' : ''}`}>
         <a
           href="#home"
           onClick={() => {
-            setActivatedNev("#home");
+            setActivatedNev('#home');
             closeNavbar();
           }}
-          className={activatedNev === "#home" ? "current-page" : "nev-link"}
+          className={activatedNev === '#home' ? 'current-page' : 'nev-link'}
         >
           <h4>Home</h4>
         </a>
         <a
           href="#about"
           onClick={() => {
-            setActivatedNev("#about");
+            setActivatedNev('#about');
             closeNavbar();
           }}
-          className={activatedNev === "#about" ? "current-page" : "nev-link"}
+          className={activatedNev === '#about' ? 'current-page' : 'nev-link'}
         >
           <h4>About</h4>
         </a>
         <a
           href="#skills"
           onClick={() => {
-            setActivatedNev("#skills");
+            setActivatedNev('#skills');
             closeNavbar();
           }}
-          className={activatedNev === "#skills" ? "current-page" : "nev-link"}
+          className={activatedNev === '#skills' ? 'current-page' : 'nev-link'}
         >
           <h4>Skills</h4>
         </a>
         <a
           href="#portfolio"
           onClick={() => {
-            setActivatedNev("#portfolio");
+            setActivatedNev('#portfolio');
             closeNavbar();
           }}
-          className={activatedNev === "#portfolio" ? "current-page" : "nev-link"}
+          className={
+            activatedNev === '#portfolio' ? 'current-page' : 'nev-link'
+          }
         >
           <h4>Portfolio</h4>
         </a>
         <a
           href="#contact"
           onClick={() => {
-            setActivatedNev("#contact");
+            setActivatedNev('#contact');
             closeNavbar();
           }}
-          className={activatedNev === "#contact" ? "current-page" : "nev-link"}
+          className={activatedNev === '#contact' ? 'current-page' : 'nev-link'}
         >
           <h4>Contact</h4>
         </a>
@@ -119,7 +124,9 @@ function Topbar() {
         )}
       </div>
       {!isMobile || isOpen ? (
-        <div className={`container ${isOpen ? "open" : ""}`}>{renderLinks()}</div>
+        <div className={`container ${isOpen ? 'open' : ''}`}>
+          {renderLinks()}
+        </div>
       ) : null}
     </div>
   );

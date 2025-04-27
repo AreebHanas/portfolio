@@ -1,23 +1,24 @@
-import React, { useRef, useState } from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import { Card } from "@mui/material";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import EmailIcon from "@mui/icons-material/Email";
-import SendIcon from "@mui/icons-material/SendRounded";
-import emailjs from "emailjs-com";
-import Swal from "sweetalert2";
-import "./contact.css";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+/* eslint-disable */
+import React, { useRef, useState } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { Card } from '@mui/material';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import SendIcon from '@mui/icons-material/SendRounded';
+import emailjs from 'emailjs-com';
+import Swal from 'sweetalert2';
+import './contact.css';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 function Contact() {
   const formRef = useRef();
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
   const [isLoading, setIsLoading] = useState(false);
 
@@ -28,44 +29,47 @@ function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: contactRef.current,
-        start: "top 80%",
-        end: "bottom 90%",
-        scrub: 1,
-      },
-    });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: 'top 80%',
+          end: 'bottom 90%',
+          scrub: 1,
+        },
+      });
 
-    tl.from(".contact_header", {
-      y: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    })
-      .from(
-        ".cards .MuiCard-root",
-        {
-          opacity: 0,
-          x: -50,
-          duration: 0.8,
-          stagger: 0.3,
-          ease: "back.out(1.7)",
-        },
-        "-=0.6"
-      )
-      .from(
-        ".direct_mail",
-        {
-          opacity: 0,
-          y: 50,
-          duration: 1,
-          ease: "power3.out",
-        },
-        "-=0.8"
-      );
-  }, { scope: contactRef });
+      tl.from('.contact_header', {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+      })
+        .from(
+          '.cards .MuiCard-root',
+          {
+            opacity: 0,
+            x: -50,
+            duration: 0.8,
+            stagger: 0.3,
+            ease: 'back.out(1.7)',
+          },
+          '-=0.6'
+        )
+        .from(
+          '.direct_mail',
+          {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out',
+          },
+          '-=0.8'
+        );
+    },
+    { scope: contactRef }
+  );
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -73,30 +77,30 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_i7kphfo",
-        "template_3xagb7s",
+        'service_i7kphfo',
+        'template_3xagb7s',
         formRef.current,
-        "mr0PF0q1JF8EwM-po"
+        'mr0PF0q1JF8EwM-po'
       )
       .then(
         (result) => {
-          console.log("Email sent!", result.text);
+          console.log('Email sent!', result.text);
           Swal.fire({
-            icon: "success",
-            title: "Message Sent!",
-            text: "Your message has been sent successfully.",
-            confirmButtonColor: "#007bff",
+            icon: 'success',
+            title: 'Message Sent!',
+            text: 'Your message has been sent successfully.',
+            confirmButtonColor: '#007bff',
           });
           setIsLoading(false);
-          setFormData({ name: "", email: "", message: "" });
+          setFormData({ name: '', email: '', message: '' });
         },
         (error) => {
-          console.log("Error sending email 😵", error.text);
+          console.log('Error sending email 😵', error.text);
           Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong. Please try again later.",
-            confirmButtonColor: "#d33",
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong. Please try again later.',
+            confirmButtonColor: '#d33',
           });
           setIsLoading(false); // Stop loading
         }
@@ -163,7 +167,7 @@ function Contact() {
               <div className="sub">Write me your project</div>
               <Box
                 sx={{
-                  "& .MuiTextField-root": { m: 1, width: "25ch" },
+                  '& .MuiTextField-root': { m: 1, width: '25ch' },
                 }}
                 noValidate
                 autoComplete="off"
@@ -210,7 +214,7 @@ function Contact() {
                 </div>
                 <div className="btn_adjst">
                   <button
-                    className={`send_btn ${isLoading ? "loading" : ""}`}
+                    className={`send_btn ${isLoading ? 'loading' : ''}`}
                     type="submit"
                     disabled={isLoading}
                   >
@@ -222,8 +226,11 @@ function Contact() {
                       </div>
                     ) : (
                       <>
-                        Send &nbsp;&nbsp;{" "}
-                        <SendIcon fontSize="small" className="send_mail_icone" />{" "}
+                        Send &nbsp;&nbsp;{' '}
+                        <SendIcon
+                          fontSize="small"
+                          className="send_mail_icone"
+                        />{' '}
                       </>
                     )}
                   </button>

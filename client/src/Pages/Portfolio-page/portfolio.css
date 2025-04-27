@@ -2,122 +2,123 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* General container styling */
 .portfolio_container {
-    font-family: 'Poppins', sans-serif;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    margin-bottom: 100px;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin-bottom: 100px;
 }
 
 .portfolio_header {
-    text-align: center;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .portfolio_header h4 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #333;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
 }
 
 .portfolio_header p {
-    font-size: 1rem;
-    color: #666;
+  font-size: 1rem;
+  color: #666;
 }
 
 .portfolio_content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .portfolio_item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    padding: 15px;
-    width: 250px;
-    height: 370px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-align: center;
+  padding: 15px;
+  width: 250px;
+  height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
 .portfolio_item img {
-    /* width: 100%; */
-    /* height: 250px; */
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 2px;
+  /* width: 100%; */
+  /* height: 250px; */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 2px;
 }
 
 .portfolio_item h5 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-    margin: 5px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 5px 0;
 }
 
 .portfolio_item p {
-    font-size: 0.85rem;
-    color: #666;
-    padding: 0 10px;
-    margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #666;
+  padding: 0 10px;
+  margin-bottom: 10px;
 }
 
 .portfolio_button {
-    background: none;
-    color: #666;
-    border: none;
-    text-decoration: underline;
-    cursor: pointer;
-    font-size: 1rem;
+  background: none;
+  color: #666;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
 .portfolio_button:hover {
-    transform: translateY(-5px);
-    text-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  text-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.portfolio_button::after{
-    content: '';
-    font-size: 0.8rem;
-    color: #999;
-    transition: transform 0.3s ease;
-    animation: fadeIn 0.4s 0.1s ease-in-out;
+.portfolio_button::after {
+  content: '';
+  font-size: 0.8rem;
+  color: #999;
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.4s 0.1s ease-in-out;
 }
 
 .portfolio_button.animate::after {
-    content: '';
-    font-size: 0.8rem;
-    color: #999;
-    transition: transform 0.3s ease;
-    animation: fadeIn 0.4s ease-in-out;
+  content: '';
+  font-size: 0.8rem;
+  color: #999;
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-        scale: 0.5;
-    }
-    100% {
-        opacity: 1;
-        scale: 1;
-    }
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
 }
