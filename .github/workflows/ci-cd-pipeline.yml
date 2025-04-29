@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.AZURE_USER }}
           key: ${{ secrets.AZURE_SSH_KEY }}
           source: "client/build/"
-          target: "/home/${{ secrets.AZURE_USER }}/portfolio/build"
+          target: "/home/${{ secrets.AZURE_USER }}/portfolio"
 
       - name: Run serve command on Azure via SSH
         uses: appleboy/ssh-action@v1.0.0
@@ -64,7 +64,6 @@ jobs:
           key: ${{ secrets.AZURE_SSH_KEY }}
           script: |
             cd portfolio
-            git pull origin main
             npm install
             npm run build
             pm2 start npx -- serve -s build -l 3000 --name portfolio || pm2 restart portfolio
