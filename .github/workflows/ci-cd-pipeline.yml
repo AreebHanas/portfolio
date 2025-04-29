@@ -53,7 +53,7 @@ jobs:
           host: ${{ secrets.AZURE_HOST }}
           username: ${{ secrets.AZURE_USER }}
           key: ${{ secrets.AZURE_SSH_KEY }}
-          source: "build/"
+          source: "client/build/"
           target: "/home/${{ secrets.AZURE_USER }}/portfolio/build"
 
       - name: Run serve command on Azure via SSH
