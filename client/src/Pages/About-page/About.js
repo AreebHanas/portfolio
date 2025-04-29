@@ -1,15 +1,16 @@
-import React, { useRef, useState } from "react";
-import profilePicture from "../../assets/IMG_7795.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+/* eslint-disable */
+import React, { useRef, useState } from 'react';
+import profilePicture from '../../assets/IMG_7795.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFile,
   faLightbulb,
   faSuitcase,
   faHeadphones,
-} from "@fortawesome/free-solid-svg-icons";
-import "./about.css";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+} from '@fortawesome/free-solid-svg-icons';
+import './about.css';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 function About() {
   const containerRef = useRef();
@@ -17,15 +18,15 @@ function About() {
 
   const handleDownload = () => {
     setIsLoading(true);
-  
+
     setTimeout(() => {
-      const link = document.createElement("a");
-      link.href = "/my-CV.pdf";
-      link.download = "Areeb-CV.pdf";
+      const link = document.createElement('a');
+      link.href = '/my-CV.pdf';
+      link.download = 'Areeb-CV.pdf';
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-  
+
       setIsLoading(false);
     }, 2000);
   };
@@ -35,68 +36,68 @@ function About() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "top 80%",
-          end: "bottom 50%",
+          start: 'top 80%',
+          end: 'bottom 50%',
           scrub: 1,
-          toggleActions: "play none none reverse",
+          toggleActions: 'play none none reverse',
         },
       });
 
-      tl.from(".about_heading", {
+      tl.from('.about_heading', {
         y: -50,
         opacity: 0,
         duration: 1,
-        ease: "power3.out",
+        ease: 'power3.out',
       })
         .from(
-          ".about_img",
+          '.about_img',
           {
             x: -200,
             opacity: 0,
             duration: 1,
-            ease: "power2.out",
+            ease: 'power2.out',
           },
-          "<"
+          '<'
         )
         .from(
-          ".about_details",
+          '.about_details',
           {
             x: 37,
             opacity: 0,
             duration: 1,
-            ease: "power2.out",
+            ease: 'power2.out',
           },
-          "<"
+          '<'
         )
         .from(
-          ".about_block",
+          '.about_block',
           {
             opacity: 0,
             y: 30,
             duration: 1,
             stagger: 0.2,
-            ease: "back.out(1.7)",
+            ease: 'back.out(1.7)',
           },
-          "<"
+          '<'
         )
         .from(
-          ".aboutMe p",
+          '.aboutMe p',
           {
             opacity: 0,
             y: 20,
             duration: 0.6,
           },
-          "<"
+          '<'
         )
         .from(
-          ".download_btn",
+          '.download_btn',
           {
             scale: 0.8,
             opacity: 0,
             duration: 0.5,
-            ease: "elastic.out(1, 0.4)",
+            ease: 'elastic.out(1, 0.4)',
           },
-          "<"
+          '<'
         );
     },
     { scope: containerRef }
@@ -149,7 +150,7 @@ function About() {
                   </div>
                 ) : (
                   <>
-                      Download CV &nbsp;&nbsp;
+                    Download CV &nbsp;&nbsp;
                     <FontAwesomeIcon icon={faFile} />
                   </>
                 )}

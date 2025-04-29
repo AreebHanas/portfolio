@@ -1,20 +1,21 @@
-import React, { useRef, useState } from "react";
-import glove from "../../assets/projects/glove.png";
-import img7795 from "../../assets/IMG_7795.jpg";
-import "./portfolio.css";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import ProjectModal from "../../Components/Modal/Modal.js";
+/* eslint-disable */
+import React, { useRef, useState } from 'react';
+import glove from '../../assets/projects/glove.png';
+import img7795 from '../../assets/IMG_7795.jpg';
+import './portfolio.css';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import ProjectModal from '../../Components/Modal/Modal.js';
 
 function Portfolio() {
   const portfolioRef = useRef();
   const [toggleModal, setToggleModal] = useState(false);
   const [projectDetails, setProjectDetails] = useState({
-    title: "",
-    about: "",
-    features: "",
+    title: '',
+    about: '',
+    features: '',
     snaps: [],
-    url: "",
+    url: '',
   });
 
   const openModal = () => {
@@ -32,34 +33,37 @@ function Portfolio() {
     openModal();
   };
 
-  useGSAP(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: portfolioRef.current,
-        start: "top 80%",
-        end: "bottom 80%",
-        scrub: 1,
-      },
-    });
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: portfolioRef.current,
+          start: 'top 80%',
+          end: 'bottom 80%',
+          scrub: 1,
+        },
+      });
 
-    tl.from(".portfolio_header", {
-      y: -50,
-      opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-    }).from(
-      ".portfolio_item",
-      {
+      tl.from('.portfolio_header', {
+        y: -50,
         opacity: 0,
-        y: 0,
-        startAt: { y: 50 },
-        duration: 0.8,
-        stagger: 0.3,
-        ease: "back.out(1.7)",
-      },
-      "-=0.8"
-    );
-  }, { scope: portfolioRef });
+        duration: 1,
+        ease: 'power3.out',
+      }).from(
+        '.portfolio_item',
+        {
+          opacity: 0,
+          y: 0,
+          startAt: { y: 50 },
+          duration: 0.8,
+          stagger: 0.3,
+          ease: 'back.out(1.7)',
+        },
+        '-=0.8'
+      );
+    },
+    { scope: portfolioRef }
+  );
 
   return (
     <div id="portfolio" ref={portfolioRef}>
@@ -76,11 +80,11 @@ function Portfolio() {
               className="portfolio_button"
               onClick={() =>
                 modalDetails(
-                  "AES-Glove",
-                  "Building a smart glove that can track patient hand movement and read heartbeats.",
-                  "Real-time communication",
+                  'AES-Glove',
+                  'Building a smart glove that can track patient hand movement and read heartbeats.',
+                  'Real-time communication',
                   [glove, img7795, img7795],
-                  "https://example.com"
+                  'https://example.com'
                 )
               }
             >
@@ -93,11 +97,11 @@ function Portfolio() {
             <button
               onClick={() =>
                 modalDetails(
-                  "Project Title 2",
-                  "Description for project 2.",
-                  "Feature 1, Feature 2",
+                  'Project Title 2',
+                  'Description for project 2.',
+                  'Feature 1, Feature 2',
                   [glove], // Add at least one image
-                  "https://example.com"
+                  'https://example.com'
                 )
               }
               className="portfolio_button"
