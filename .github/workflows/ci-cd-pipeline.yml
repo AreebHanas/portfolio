@@ -20,6 +20,14 @@ jobs:
         with:
           node-version: '18'
 
+      - name: Cache npm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+      
       - name: Install dependencies
         run: npm install
 
@@ -63,6 +71,6 @@ jobs:
           username: ${{ secrets.AZURE_USER }}
           key: ${{ secrets.AZURE_SSH_KEY }}
           script: |
-              npm install pm2
+              sudo npm install pm2
               pm2 start npx --name portfolio -- serve -s /home/${{ secrets.AZURE_USER }}/portfolio -l 3000 || pm2 restart portfolio
               pm2 save
