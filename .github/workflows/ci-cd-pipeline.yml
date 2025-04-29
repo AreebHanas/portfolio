@@ -63,6 +63,5 @@ jobs:
           username: ${{ secrets.AZURE_USER }}
           key: ${{ secrets.AZURE_SSH_KEY }}
           script: |
-             npm install -g pm2 serve
               pm2 start npx --name portfolio -- serve -s /home/${{ secrets.AZURE_USER }}/portfolio -l 3000 || pm2 restart portfolio
               pm2 save
