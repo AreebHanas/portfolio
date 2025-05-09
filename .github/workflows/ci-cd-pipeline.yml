@@ -83,5 +83,6 @@ jobs:
               #!/bin/bash
               set -e
               sudo npm install -g pm2
+              pm2 delete all || true
               pm2 serve /home/${{ secrets.AZURE_USER }}/portfolio/client/build 3000 --name "portfolio"
               pm2 save
