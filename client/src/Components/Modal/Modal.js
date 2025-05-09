@@ -3,7 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
-import { FormLabel } from '@mui/material';
+import { FormLabel, IconButton } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import gsap from 'gsap';
 
 const style = {
@@ -11,13 +12,16 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: '90%', // Responsive width
+  maxWidth: '500px', // Maximum width for larger screens
+  maxHeight: '90vh', // Limit height to 90% of the viewport
   bgcolor: 'background.paper',
   border: 'none',
   borderRadius: '8px',
   boxShadow: 24,
   p: 4,
-  scale: 0.8,
+  overflowY: 'auto', // Enable vertical scrolling
+  mb: 10, // Add margin at the bottom for mobile devices
 };
 
 function ProjectModal({ toggleModal, projectDetails, openModal }) {
@@ -61,86 +65,121 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
   };
 
   return (
-    <Modal
-      keepMounted
-      open={toggleModal}
-      onClose={openModal}
-      aria-labelledby="project-modal-title"
-      aria-describedby="project-modal-description"
-      ref={modalRef}
-    >
-      <Box ref={modalRef} sx={style}>
-        <Typography
-          id="project-modal-title"
-          variant="h6"
-          component="h2"
-          sx={{ mb: 4 }}
+    <>
+      <Modal
+        keepMounted
+        open={toggleModal}
+        onClose={openModal} // Close modal when clicking outside
+        aria-labelledby="project-modal-title"
+        aria-describedby="project-modal-description"
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh', // Full viewport height
+            width: '100vw', // Full viewport width
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Add a semi-transparent background
+            zIndex: 1300,
+          }}
         >
-          {projectDetails.title || 'Project Title'}
-        </Typography>
-        <FormLabel>Project details</FormLabel>
-        <Typography
-          id="project-modal-description"
-          sx={{ mt: 2, mb: 4 }}
-          component="h2"
-        >
-          {projectDetails.about || 'Project description goes here.'}
-        </Typography>
-        <FormLabel>Features</FormLabel>
-        <Typography sx={{ mt: 2, mb: 4 }} component="h2">
-          Features: {projectDetails.features || 'No features listed.'}
-        </Typography>
-        {projectDetails.snaps && projectDetails.snaps.length > 0 ? (
-          <>
-            <FormLabel>Project Screenshots</FormLabel>
-            <Box
+          <Box sx={style} ref={modalRef}>
+            {/* Close Button */}
+            <IconButton
+              onClick={openModal}
               sx={{
-                display: 'flex',
-                flexDirection: 'row',
-                overflowX: 'auto',
-                gap: '10px',
-                mt: 2,
-                pb: 2,
+                position: 'absolute',
+                top: '10px',
+                right: '10px',
+                color: 'black',
               }}
             >
-              {projectDetails.snaps.map((snap, index) => (
-                <img
-                  key={index}
-                  src={snap}
-                  alt={`Screenshot ${index + 1}`}
-                  style={{
-                    width: '300px',
-                    height: '200px',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-                    transition: 'transform 0.2s',
-                    cursor: 'pointer',
-                  }}
-                  onClick={() => openImageViewer(index)}
-                />
-              ))}
-            </Box>
-          </>
-        ) : null}
-        {projectDetails.url ? (
-          <>
-            <FormLabel>Demo</FormLabel>
-            <Typography sx={{ mt: 2 }}>
-              URL:{' '}
-              <a
-                href={projectDetails.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {projectDetails.url}
-              </a>
-            </Typography>
-          </>
-        ) : null}
+              <CloseIcon />
+            </IconButton>
 
-        {/* Image Viewer */}
-        {isImageViewerOpen && (
+            <Typography
+              id="project-modal-title"
+              variant="h6"
+              component="h2"
+              sx={{ mb: 4 }}
+            >
+              {projectDetails.title || 'Project Title'}
+            </Typography>
+            <FormLabel>Project details</FormLabel>
+            <Typography
+              id="project-modal-description"
+              sx={{ mt: 2, mb: 4 }}
+              component="h2"
+            >
+              {projectDetails.about || 'Project description goes here.'}
+            </Typography>
+            <FormLabel>Features</FormLabel>
+            <Typography sx={{ mt: 2, mb: 4 }} component="h2">
+              Features: {projectDetails.features || 'No features listed.'}
+            </Typography>
+            {projectDetails.snaps && projectDetails.snaps.length > 0 ? (
+              <>
+                <FormLabel>Project Screenshots</FormLabel>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    overflowX: 'auto',
+                    gap: '10px',
+                    mt: 2,
+                    pb: 2,
+                  }}
+                >
+                  {projectDetails.snaps.map((snap, index) => (
+                    <img
+                      key={index}
+                      src={snap}
+                      alt={`Screenshot ${index + 1}`}
+                      style={{
+                        width: '300px',
+                        height: '200px',
+                        objectFit: 'cover',
+                        borderRadius: '8px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+                        transition: 'transform 0.2s',
+                        cursor: 'pointer',
+                      }}
+                      onClick={() => openImageViewer(index)}
+                    />
+                  ))}
+                </Box>
+              </>
+            ) : null}
+            {projectDetails.url ? (
+              <>
+                <FormLabel>Demo</FormLabel>
+                <Typography sx={{ mt: 2 }}>
+                  URL:{' '}
+                  <a
+                    href={projectDetails.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {projectDetails.url}
+                  </a>
+                </Typography>
+              </>
+            ) : null}
+          </Box>
+        </Box>
+      </Modal>
+
+      {/* Image Viewer Modal */}
+      {isImageViewerOpen && (
+        <Modal
+          open={isImageViewerOpen}
+          onClose={closeImageViewer}
+          aria-labelledby="image-viewer-title"
+        >
           <Box
             sx={{
               position: 'fixed',
@@ -150,10 +189,9 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
               height: '100%',
               backgroundColor: 'rgba(0, 0, 0, 0.8)',
               display: 'flex',
-              flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              zIndex: 1300,
+              zIndex: 1400,
             }}
           >
             <button
@@ -171,60 +209,48 @@ function ProjectModal({ toggleModal, projectDetails, openModal }) {
             >
               &times;
             </button>
+            <button
+              style={{
+                position: 'absolute',
+                left: '20px',
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                fontSize: '2rem',
+                cursor: 'pointer',
+              }}
+              onClick={prevImage}
+            >
+              &#8249;
+            </button>
             <img
               src={projectDetails.snaps[currentImageIndex]}
               alt={`Screenshot ${currentImageIndex + 1}`}
               style={{
-                maxWidth: '90%', // Increased width to 90% of the viewport
-                maxHeight: '80%', // Adjusted height to leave space for buttons
+                maxWidth: '90%',
+                maxHeight: '90%',
                 borderRadius: '8px',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-                marginBottom: '20px', // Add space between the image and buttons
               }}
             />
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '20px',
+            <button
+              style={{
+                position: 'absolute',
+                right: '20px',
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                fontSize: '2rem',
+                cursor: 'pointer',
               }}
+              onClick={nextImage}
             >
-              <button
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'white',
-                  fontSize: '1.5rem',
-                  cursor: 'pointer',
-                  padding: '10px 20px',
-                  borderRadius: '5px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                }}
-                onClick={prevImage}
-              >
-                &#8249; Previous
-              </button>
-              <button
-                style={{
-                  background: 'none',
-                  border: 'none',
-                  color: 'white',
-                  fontSize: '1.5rem',
-                  cursor: 'pointer',
-                  padding: '10px 20px',
-                  borderRadius: '5px',
-                  backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                }}
-                onClick={nextImage}
-              >
-                Next &#8250;
-              </button>
-            </Box>
+              &#8250;
+            </button>
           </Box>
-        )}
-      </Box>
-    </Modal>
+        </Modal>
+      )}
+    </>
   );
 }
 
