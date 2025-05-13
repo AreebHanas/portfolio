@@ -139,7 +139,12 @@
   }
 
   .download_btn {
-    display: flex;
-    justify-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Safari flexbox fallback */
+    -webkit-align-self: center;
+    align-self: center;
+    /* Remove justify-self if present */
   }
 }

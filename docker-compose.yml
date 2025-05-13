@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  app:
+    image: portfolio
+    build:
+      context: ./client
+    ports:
+        - "443:443"
+        - "80:80"
+    restart: always

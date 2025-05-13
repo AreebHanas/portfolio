@@ -215,6 +215,7 @@
 
   .contact_detail {
     flex-direction: column;
+    -webkit-flex-direction: column;
     align-items: center;
     justify-content: center;
   }
@@ -237,10 +238,15 @@
 
   .text_field {
     display: flex !important;
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
     justify-self: center !important;
     width: 100% !important;
     max-width: 450px !important;
     margin: 10px 0 0 0 !important;
+    gap: 50px !important;
+    row-gap: 50px !important;
+    -webkit-row-gap: 50px !important;
   }
 
   .css-13r4j3i .MuiTextField-root {
@@ -248,3 +254,14 @@
     max-width: 435px !important;
   }
 }
+
+/* Fallback for gap in Safari: add margin-bottom to children
+.cards > *:not(:last-child),
+.text_field > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.text_field > *:not(:last-child) {
+  margin-bottom: 50px;
+} */
+
