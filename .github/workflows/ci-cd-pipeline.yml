@@ -68,6 +68,8 @@ jobs:
           script: |
             #!/bin/bash
             set -e
+            sudo systemctl enable docker
+            sudo systemctl start docker
             cd /home/${{ secrets.AZURE_USER }}/portfolio
             docker-compose down || true
             docker-compose up -d --build
