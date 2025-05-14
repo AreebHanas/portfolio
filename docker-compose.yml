@@ -25,9 +25,13 @@ services:
     command: >
       sh -c "
         certbot certonly --webroot --webroot-path=/usr/share/nginx/html \
-        --email arbofficial02@email.com --agree-tos --no-eff-email \
-        -d areebhanas.studio -d www.areebhanas.studio &&
-        while :; do certbot renew --webroot -w /usr/share/nginx/html; sleep 12h & wait $${!}; done;
+      --email arbofficial02@email.com --agree-tos --no-eff-email \
+      -d areebhanas.studio -d www.areebhanas.studio
+
+      while :; do
+        certbot renew --webroot -w /usr/share/nginx/html
+        sleep 12h
+      done
       "
 
   react-app:
