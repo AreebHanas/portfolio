@@ -107,7 +107,7 @@ function About() {
     <div id="about" ref={containerRef}>
       <div className="about_heading">
         <h4>About Me</h4>
-        <p>My introdection</p>
+        <p>My introduction</p>
       </div>
       <div className="about_contants">
         <img className="about_img" src={profilePicture} alt="Profile pic"></img>
@@ -115,7 +115,7 @@ function About() {
           <div className="about_blocks">
             <div className="about_block">
               <FontAwesomeIcon icon={faLightbulb} className="about_icon" />
-              <h5>Expirience</h5>
+              <h5>Experience</h5>
               <p className="about_pera">1 year</p>
             </div>
             <div className="about_block">
