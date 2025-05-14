@@ -18,8 +18,8 @@ FROM nginx:alpine
 
 COPY --from=0 /app/build /usr/share/nginx/html
 
-COPY --from=0 /etc/nginx/ssl/cert.pem /etc/nginx/ssl/cert.pem
-COPY --from=0 /etc/nginx/ssl/key.pem /etc/nginx/ssl/key.pem
+# COPY --from=0 /etc/nginx/ssl/cert.pem /etc/nginx/ssl/cert.pem
+# COPY --from=0 /etc/nginx/ssl/key.pem /etc/nginx/ssl/key.pem
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
