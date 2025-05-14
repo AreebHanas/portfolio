@@ -6,5 +6,14 @@ services:
       context: ./client
     ports:
         - "443:443"
-        - "80:80"
+    restart: always
+  
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - ./certs:/etc/letsencrypt
+      - ./certs-data:/var/lib/letsencrypt
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    ports:
+      - "80:80"
     restart: always
