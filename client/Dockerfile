@@ -24,4 +24,3 @@ COPY --from=0 /etc/nginx/ssl/key.pem /etc/nginx/ssl/key.pem
 COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 443
-EXPOSE 80
