@@ -23,14 +23,13 @@ services:
       - ./certs:/etc/letsencrypt
       - ./certs-data:/var/lib/letsencrypt
       - ./client/build:/usr/share/nginx/html
+    entrypoint: "/bin/sh -c"
     command: >
-      sh -c "
-        certbot certonly --webroot --webroot-path=/usr/share/nginx/html \
-        --email arbofficial02@email.com --agree-tos --no-eff-email \
-        -d areebhanas.studio -d www.areebhanas.studio && \
-        trap exit TERM; while :; do certbot renew --webroot -w /usr/share/nginx/html; sleep 12h & wait $${!}; done
-      "
-
+      "certbot certonly --webroot --webroot-path=/usr/share/nginx/html
+      --email arbofficial02@email.com --agree-tos --no-eff-email
+      -d areebhanas.studio -d www.areebhanas.studio &&
+      trap exit TERM; while :; do certbot renew --webroot -w /usr/share/nginx/html; sleep 12h & wait ${!}; done"
+  
   react-app:
     build:
       context: ./client
