@@ -34,9 +34,6 @@ jobs:
       - name: Run Linter
         run: npm run lint
 
-      - name: Build React App
-        run: npm run build
-
   cd:
     needs: ci
     runs-on: ubuntu-latest
