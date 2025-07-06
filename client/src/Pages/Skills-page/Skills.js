@@ -82,21 +82,28 @@ function Skills() {
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">HTML</h4>
                   </div>
-                  <p className="skill_level">Intermediate</p>
+                  <p className="skill_level">Advance</p>
                 </div>
                 <div>
                   <div className="skill_title">
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">CSS</h4>
                   </div>
-                  <p className="skill_level">Intermediate</p>
+                  <p className="skill_level">Advance</p>
                 </div>
                 <div>
                   <div className="skill_title">
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">JavaScript</h4>
                   </div>
-                  <p className="skill_level">Intermediate</p>
+                  <p className="skill_level">Advance</p>
+                </div>
+                <div>
+                  <div className="skill_title">
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                    <h4 className="skills">Bootstrap</h4>
+                  </div>
+                  <p className="skill_level">Advance</p>
                 </div>
               </div>
               <div className="column_list">
@@ -104,6 +111,13 @@ function Skills() {
                   <div className="skill_title">
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">Git</h4>
+                  </div>
+                  <p className="skill_level">Advance</p>
+                </div>
+                <div>
+                  <div className="skill_title">
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                    <h4 className="skills">CI and CD</h4>
                   </div>
                   <p className="skill_level">Intermediate</p>
                 </div>
@@ -117,9 +131,9 @@ function Skills() {
                 <div>
                   <div className="skill_title">
                     <FontAwesomeIcon icon={faCheckCircle} />
-                    <h4 className="skills">Bootstrap</h4>
+                    <h4 className="skills">Redux</h4>
                   </div>
-                  <p className="skill_level">Intermediate</p>
+                  <p className="skill_level">Advance</p>
                 </div>
               </div>
             </div>
@@ -133,19 +147,26 @@ function Skills() {
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">Node JS</h4>
                   </div>
-                  <p className="skill_level">Intermediate</p>
+                  <p className="skill_level">Advance</p>
                 </div>
                 <div>
                   <div className="skill_title">
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">Phython</h4>
                   </div>
-                  <p className="skill_level">Beginner</p>
+                  <p className="skill_level">Intermediate</p>
                 </div>
                 <div>
                   <div className="skill_title">
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">C</h4>
+                  </div>
+                  <p className="skill_level">Intermediate</p>
+                </div>
+                <div>
+                  <div className="skill_title">
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                    <h4 className="skills">Docker</h4>
                   </div>
                   <p className="skill_level">Intermediate</p>
                 </div>
@@ -156,7 +177,7 @@ function Skills() {
                     <FontAwesomeIcon icon={faCheckCircle} />
                     <h4 className="skills">My SQL</h4>
                   </div>
-                  <p className="skill_level">Intermediate</p>
+                  <p className="skill_level">Advance</p>
                 </div>
                 <div>
                   <div className="skill_title">
@@ -171,6 +192,13 @@ function Skills() {
                     <h4 className="skills">MongoDB</h4>
                   </div>
                   <p className="skill_level">advance</p>
+                </div>
+                <div>
+                  <div className="skill_title">
+                    <FontAwesomeIcon icon={faCheckCircle} />
+                    <h4 className="skills">Deployment</h4>
+                  </div>
+                  <p className="skill_level">Intermediate</p>
                 </div>
               </div>
             </div>

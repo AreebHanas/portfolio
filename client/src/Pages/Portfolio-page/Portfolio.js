@@ -1,7 +1,22 @@
 /* eslint-disable */
 import React, { useRef, useState } from 'react';
 import glove from '../../assets/projects/glove.png';
-import img7795 from '../../assets/IMG_7795.jpg';
+import ckProject from '../../assets/projects/CK-Project.jpg';
+import aes01 from '../../assets/AES01.png';
+import aes02 from '../../assets/AES02.png';
+import aes03 from '../../assets/AES03.png';
+import aes04 from '../../assets/AES04.png';
+import aes05 from '../../assets/AES05.png';
+import aes06 from '../../assets/AES06.png';
+import aes07 from '../../assets/AES07.png';
+import portfolio01 from '../../assets/ptflio01.png';
+import portfolio02 from '../../assets/ptflio02.png';
+import portfolio03 from '../../assets/ptflio03.png';
+import portfolio04 from '../../assets/ptflio04.png';
+import portfolio05 from '../../assets/ptflio05.png';
+import taskTracker01 from '../../assets/TaskTrackr01.png';
+import taskTracker02 from '../../assets/TaskTrackr02.png';
+import taskTracker03 from '../../assets/TaskTrackr03.png';
 import './portfolio.css';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -74,17 +89,16 @@ function Portfolio() {
         </div>
         <div className="portfolio_content">
           <div className="portfolio_item">
-            <img src={glove} alt="Portfolio Item 1" />
-            <h5>AES-Glove</h5>
+            <img src={glove} loading='lazy' alt="Portfolio Item 1" />
+            <h5>AES-Glove(On going)</h5>
             <button
               className="portfolio_button"
               onClick={() =>
                 modalDetails(
                   'AES-Glove',
-                  'Building a smart glove that can track patient hand movement and read heartbeats.',
-                  'Real-time communication',
-                  [glove, img7795, img7795],
-                  'https://example.com'
+                  "The AES Glove is a real-time motion-tracking system designed to monitor and evaluate physical exercises for patients. It bridges the gap between healthcare professionals and patients by providing live feedback, performance analysis, and progress tracking through an intelligent web dashboard. Using sensors embedded in a glove and ESP32 microcontroller, the data is streamed live to a web platform where both patients and doctors can view exercise movements, compare results, and track improvements over time. This project combines IoT, real-time data streaming, and web development to enhance physical therapy sessions with smart tech.",
+                  ' Real-time Sensor Data Tracking,  Live Graphs & Monitoring, Dual User Interface,  Smart Analytics & Feedback',
+                  [aes01, aes02, aes03, aes04, aes05, aes06, aes07],
                 )
               }
             >
@@ -92,16 +106,53 @@ function Portfolio() {
             </button>
           </div>
           <div className="portfolio_item">
-            <img src={glove} alt="Portfolio Item 2" />
-            <h5>Project Title 2</h5>
+            <img src={ckProject} loading='lazy' alt="" />
+            <h5>Online Quiz System(On going)</h5>
             <button
               onClick={() =>
                 modalDetails(
-                  'Project Title 2',
-                  'Description for project 2.',
-                  'Feature 1, Feature 2',
-                  [glove], // Add at least one image
-                  'https://example.com'
+                  'Online Quiz System',
+                  'This is a full-stack quiz platform where teachers can create quizzes, define multiple choice questions, and mark the correct answers. Students can then attempt these quizzes, and upon submission, the system automatically evaluates their answers, displays corrections, and generates scores in real-time. Built for educational institutions or training platforms, this app provides detailed performance analytics, tracks high scores, and separates teacher and student dashboards for clarity and security.',
+                  ' Teacher Dashboard for Quiz Creation,  Student Dashboard for Quiz Attempting,  Real-time Answer Evaluation,  Performance Analytics & High Score Tracking',
+                  [],
+                )
+              }
+              className="portfolio_button"
+            >
+              <p>More about the project</p>
+            </button>
+          </div>
+
+          <div className="portfolio_item">
+            <img src={portfolio01} loading='lazy' alt="" />
+            <h5>Personol Portfolio</h5>
+            <button
+              onClick={() =>
+                modalDetails(
+                  'Responsive Portfolio Website – Dockerized & Deployed on Azure with SSL',
+                  'My personal portfolio is a responsive React-based web application that showcases my skills, experience, and projects. This project wasn’t just about frontend design — I used it as a hands-on lab to explore real-world DevOps tools and deployment strategies. I implemented smooth scrolling animations using GSAP, made the site fully responsive, and learned how to take a personal project from local dev to live production using Docker, NGINX, CI/CD pipelines, and SSL integration.',
+                  'Responsive Design with GSAP Animations,  Dockerized for Consistent Environments,  Deployed on Azure with SSL,  CI/CD Pipeline for Automated Deployments',
+                  [portfolio01, portfolio02, portfolio03, portfolio04, portfolio05],
+                  'https://areebhanas.studio'
+                )
+              }
+              className="portfolio_button"
+            >
+              <p>More about the project</p>
+            </button>
+          </div>
+
+          <div className="portfolio_item">
+            <img src={taskTracker01} loading='lazy' alt="" />
+            <h5>Landing Page For TaskTrakr</h5>
+            <button
+              onClick={() =>
+                modalDetails(
+                  'Landing Page For TaskTrakr',
+                  'TaskTrackr is a modern, responsive landing page UI/UX design built using pure HTML and CSS. The goal of this project was to practice clean design principles, mobile-first responsiveness, and semantic HTML layout without any frameworks. It serves as the homepage concept for a task management startup, showcasing product features, benefits, and a call-to-action section. This project allowed me to focus on pure UI/UX fundamentals like layout, spacing, typography, and color contrast.',
+                  ' Responsive Design with HTML & CSS,  Clean UI/UX Principles,  Mobile-First Approach,  Semantic HTML Layout',
+                  [taskTracker01, taskTracker02, taskTracker03],
+                  'https://blue-forest-011f4e010.2.azurestaticapps.net'
                 )
               }
               className="portfolio_button"

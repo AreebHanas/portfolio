@@ -110,7 +110,7 @@ function About() {
         <p>My introduction</p>
       </div>
       <div className="about_contants">
-        <img className="about_img" src={profilePicture} alt="Profile pic"></img>
+        <img className="about_img" src={profilePicture} loading='lazy' alt="Profile pic"></img>
         <div className="about_details">
           <div className="about_blocks">
             <div className="about_block">
@@ -121,7 +121,7 @@ function About() {
             <div className="about_block">
               <FontAwesomeIcon icon={faSuitcase} className="about_icon" />
               <h5>Completed</h5>
-              <p className="about_pera">10 + projects</p>
+              <p className="about_pera">5 + projects</p>
             </div>
             <div className="about_block">
               <FontAwesomeIcon icon={faHeadphones} className="about_icon" />
@@ -164,5 +164,3 @@ function About() {
 }
 
 export default About;
-
-// S_ID: service_vmf9s4k  service_i7kphfo
