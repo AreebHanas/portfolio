@@ -59,6 +59,7 @@ jobs:
           script: |
             #!/bin/bash
             set -e
+            docker system prune -a -f --volumes
             sudo systemctl enable docker
             sudo systemctl start docker
             cd /home/${{ secrets.AZURE_USER }}/portfolio
