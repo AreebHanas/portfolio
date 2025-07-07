@@ -105,7 +105,7 @@ function Home() {
           <a href="https://www.instagram.com/areeb_hanas?igsh=MWJ0bnM1OTc2enhsMw==">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="https://github.com/">
+          <a href="https://areebhanas.studio">
             <FontAwesomeIcon icon={faGlobe} />
           </a>
           <a href="https://github.com/">
