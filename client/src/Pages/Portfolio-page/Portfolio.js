@@ -99,6 +99,7 @@ function Portfolio() {
                   "The AES Glove is a real-time motion-tracking system designed to monitor and evaluate physical exercises for patients. It bridges the gap between healthcare professionals and patients by providing live feedback, performance analysis, and progress tracking through an intelligent web dashboard. Using sensors embedded in a glove and ESP32 microcontroller, the data is streamed live to a web platform where both patients and doctors can view exercise movements, compare results, and track improvements over time. This project combines IoT, real-time data streaming, and web development to enhance physical therapy sessions with smart tech.",
                   ' Real-time Sensor Data Tracking,  Live Graphs & Monitoring, Dual User Interface,  Smart Analytics & Feedback',
                   [aes01, aes02, aes03, aes04, aes05, aes06, aes07],
+                  'http://aes.koreacentral.cloudapp.azure.com'
                 )
               }
             >
@@ -115,6 +116,7 @@ function Portfolio() {
                   'This is a full-stack quiz platform where teachers can create quizzes, define multiple choice questions, and mark the correct answers. Students can then attempt these quizzes, and upon submission, the system automatically evaluates their answers, displays corrections, and generates scores in real-time. Built for educational institutions or training platforms, this app provides detailed performance analytics, tracks high scores, and separates teacher and student dashboards for clarity and security.',
                   ' Teacher Dashboard for Quiz Creation,  Student Dashboard for Quiz Attempting,  Real-time Answer Evaluation,  Performance Analytics & High Score Tracking',
                   [],
+                  'https://arbsolutions.netlify.app'
                 )
               }
               className="portfolio_button"
@@ -133,7 +135,7 @@ function Portfolio() {
                   'My personal portfolio is a responsive React-based web application that showcases my skills, experience, and projects. This project wasn’t just about frontend design — I used it as a hands-on lab to explore real-world DevOps tools and deployment strategies. I implemented smooth scrolling animations using GSAP, made the site fully responsive, and learned how to take a personal project from local dev to live production using Docker, NGINX, CI/CD pipelines, and SSL integration.',
                   'Responsive Design with GSAP Animations,  Dockerized for Consistent Environments,  Deployed on Azure with SSL,  CI/CD Pipeline for Automated Deployments',
                   [portfolio01, portfolio02, portfolio03, portfolio04, portfolio05],
-                  'https://areebhanas.studio'
+                  'https://arbhnsportfolio.netlify.app'
                 )
               }
               className="portfolio_button"
