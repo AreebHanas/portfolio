@@ -132,7 +132,7 @@ function About() {
           <div className="discription">
             <div className="aboutMe">
               <p>
-                Fullstack developer. I create web pages dinamically. I complete
+                Fullstack developer. I create web pages dynamically. I complete
                 my internship at Vinnovate technologies
               </p>
             </div>

@@ -152,7 +152,7 @@ function Skills() {
                 <div>
                   <div className="skill_title">
                     <FontAwesomeIcon icon={faCheckCircle} />
-                    <h4 className="skills">Phython</h4>
+                    <h4 className="skills">Python</h4>
                   </div>
                   <p className="skill_level">Intermediate</p>
                 </div>
