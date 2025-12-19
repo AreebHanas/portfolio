@@ -105,10 +105,10 @@ function Home() {
           <a href="https://www.instagram.com/areeb_hanas?igsh=MWJ0bnM1OTc2enhsMw==">
             <FontAwesomeIcon icon={faInstagram} />
           </a>
-          <a href="https://areebhanas.studio/">
+          <a href="https://arbhnsportfolio.netlify.app/#home">
             <FontAwesomeIcon icon={faGlobe} />
           </a>
-          <a href="https://github.com/">
+          <a href="https://github.com/AreebHanas">
             <FontAwesomeIcon icon={faGithub} />
           </a>
           {!isMobile ? (
